@@ -41,3 +41,9 @@ Com o Android SDK instalado e as propriedades de assinatura preservadas em `$HOM
 A política de privacidade está em `PRIVACY-POLICY.md`. Antes de divulgar publicamente, substituir o contato de suporte placeholder e publicar a política em uma URL HTTPS pública e estável.
 
 Política pública: https://faelafael.github.io/atelie-unissex-android/privacy.html
+
+## Distribuição pública
+- APK instalável: baixe `atelie-unissex-1.0.0.apk` na seção Releases do repositório público.
+- AAB: formato para Play Console; não é instalável diretamente. A submissão à Play Store depende de autorização do responsável pelo Perchance para o uso do WebView.
+- Para instalar o APK: baixe no Android, abra o arquivo e permita a instalação pelo navegador/gerenciador de arquivos quando o sistema solicitar.
+- O app não cobra, não exibe publicidade própria e não inclui monetização.

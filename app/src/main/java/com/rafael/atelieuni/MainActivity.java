@@ -407,7 +407,7 @@ public class MainActivity extends Activity {
             String payload = dataUrl.substring(comma + 1);
             byte[] bytes = metadata.contains(";base64")
                     ? Base64.decode(payload, Base64.DEFAULT)
-                    : URLDecoder.decode(payload, StandardCharsets.UTF_8).getBytes(StandardCharsets.UTF_8);
+                    : URLDecoder.decode(payload, "UTF-8").getBytes(StandardCharsets.UTF_8);
             if (bytes.length == 0 || bytes.length > 25 * 1024 * 1024) {
                 throw new IllegalArgumentException("Imagem vazia ou maior que 25 MB");
             }
