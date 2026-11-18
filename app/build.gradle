@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.application'
+}
+
+def signingFile = new File(System.getProperty('user.home'), '.config/atelie-unissex/signing.properties')
+def signingProperties = new Properties()
+if (signingFile.exists()) {
+    signingFile.withInputStream { signingProperties.load(it) }
+}
+
+android {
+    namespace 'com.rafael.atelieuni'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'com.rafael.atelieuni'
+        minSdk 29
+        targetSdk 36
+        versionCode 1
+        versionName '1.0.0'
+    }
+
+    signingConfigs {
+        release {
+            if (signingFile.exists()) {
+                storeFile file(signingProperties.getProperty('storeFile'))
+                storePassword signingProperties.getProperty('storePassword')
+                keyAlias signingProperties.getProperty('keyAlias')
+                keyPassword signingProperties.getProperty('keyPassword')
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildTypes {
+        debug { applicationIdSuffix '.debug' }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+}
